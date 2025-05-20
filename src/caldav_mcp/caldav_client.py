@@ -73,8 +73,8 @@ class CalDAVClient:
 
         uid = str(ical.get("UID"))
         summary = str(ical.get("SUMMARY", ""))
-        start = ical.get("DTSTART").dt.strftime("%Y%m%dT%H%M%S") if ical.get("DTSTART") else ""
-        end = ical.get("DTEND").dt.strftime("%Y%m%dT%H%M%S") if ical.get("DTEND") else ""
+        start = ical.get("DTSTART").dt.strftime("%Y%m%dT%H%M%S%z") if ical.get("DTSTART") else ""
+        end = ical.get("DTEND").dt.strftime("%Y%m%dT%H%M%S%z") if ical.get("DTEND") else ""
         location = str(ical.get("LOCATION", "")) if ical.get("LOCATION") else None
         description = str(ical.get("DESCRIPTION", "")) if ical.get("DESCRIPTION") else None
 
